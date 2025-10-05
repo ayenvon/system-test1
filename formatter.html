@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Card Extractor</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      textarea,
+      pre {
+        width: 100%;
+        min-height: 200px;
+        margin-top: 10px;
+      }
+      button {
+        margin-top: 10px;
+        padding: 10px 15px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Extract Full Card Details</h2>
+    <textarea id="input" placeholder="Paste your data here..."></textarea>
+    <button onclick="extractCards()">Extract</button>
+    <pre id="output"></pre>
+
+    <script>
+      function extractCards() {
+        const input = document.getElementById("input").value;
+        // Capture: 16-digit card | MM | YYYY | CVV
+        const matches = input.match(/\b\d{16}\|\d{2}\|\d{4}\|\d{3,4}\b/g);
+        document.getElementById("output").textContent = matches
+          ? matches.join("\n")
+          : "No cards found";
+      }
+    </script>
+  </body>
+</html>

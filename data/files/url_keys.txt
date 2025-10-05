@@ -1,0 +1,7 @@
+site:ca inurl:/product-category/
+site:uk inurl:/product-category/
+site:us inurl:/product-category/
+site:au inurl:/shop/
+site:uk inurl:/shop/
+site:us inurl:/shop/
+site:ca inurl:/shop/
